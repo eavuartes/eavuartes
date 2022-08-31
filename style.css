@@ -1,135 +1,113 @@
-@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
-
-body {
-  background: #fff;
+html{
+  font-family: 'ROBOTO';
 }
 
+.error{
+  position: absolute;
 
-@-webkit-keyframes wave {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  width: 200px;
+  height: 200px;
 
+  margin: auto;
 
-@keyframes wave {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  text-align: center;
 
-.music-card {
-  margin: 100px auto;
-  background: #fff;
-  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
   overflow: hidden;
-  position: relative;
-  width: 300px;
-  height: 500px;
-  border-radius: 6px;
-}
 
-.image {
-  background: url('http://static1.squarespace.com/static/530b728de4b04fc9b23a5988/t/569880381a5203aa7d44c1a8/1452834873397/00.jpg?format=1000w') no-repeat 75%;
-  background-size: cover;  
-  position: absolute;
-  z-index: 1;
-  opacity: 0.3;
-  height: 300px;
-  width: 300px;
-}
+  border: 2px solid;
 
-.image:after {
-  height: 100px;
-  content: '';
-  top: 200px;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  background: linear-gradient(rgba(9, 2, 4, 0), #444);
-}
-
-.wave {
-  position: absolute;
-  height: 750px;
-  width: 750px;
-  opacity: 0.6;
-  left: 0;
   top: 0;
-  margin-left: -70%;
-  margin-top: -130%;
-  background: radial-gradient(#353535, #383737);
-}
-
-.wave:nth-child(2),
-.wave:nth-child(3) {
-  top: 10px;
-}
-
-.playing .wave {
-  border-radius: 40%;
-  -webkit-animation: wave 3000ms infinite linear;
-          animation: wave 3000ms infinite linear;
-}
-/* when stop */
-.wave {
-  border-radius: 40%;
-  -webkit-animation: wave 55s infinite linear;
-          animation: wave 55s infinite linear;
-}
-
-.playing .wave:nth-child(2) {
-  -webkit-animation-duration: 4000ms;
-          animation-duration: 4000ms;
-}
-/* when stop */
-.wave:nth-child(2) {
-  -webkit-animation-duration: 50s;
-          animation-duration: 50s;
-}
-
-.playing .wave:nth-child(3) {
-  -webkit-animation-duration: 5000ms;
-          animation-duration: 5000ms;
-}
-/* when stop */
-.wave:nth-child(3) {
-  -webkit-animation-duration: 45s;
-          animation-duration: 45s;
-}
-
-.info {
-  position: absolute;
-  bottom: 20px;
   left: 0;
   right: 0;
-  text-align: center;
+  bottom: 0;
 }
 
-.title {
-  font-size: 1.4em;
-  font-weight: 400;
-  color: #333;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  font-family: 'Reem Kufi', sans-serif;
+.no-401::before{
+  content:'401';
+}
+.no-401::after{
+  content:'Unauthorized';
 }
 
-.artist {
-  color: #cfcfcf;
-  font-size: 1.2em;
-  letter-spacing: 0.08em;
-  font-family: 'Reem Kufi', sans-serif;
-  margin-top: -10px;
+.no-403::before{
+  content:'403';
+}
+.no-403::after{
+  content:'Forbidden';
 }
 
-.fa {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  color: #555;
+.no-404::before{
+  content:'404';
+}
+.no-404::after{
+  content:'Page Not Found';
 }
 
-.fa-play {
-  display: none;
+.no-500::before{
+  content:'500';
+}
+.no-500::after{
+  content:'Internal Server Error';
+}
+
+.error::before{
+  position: relative;
+  display: block;
+  font-size: 100px;
+  font-weight: 100;
+  margin: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  animation: error-anim 5s;
+}
+
+.error::after{
+  position: relative;
+
+  display: block;
+  font-size: 25px;
+  font-weight: 100;
+
+  margin: auto;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 35%;
+
+  animation: message-anim 5s;
+}
+
+@keyframes error-anim{
+  from{
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes error-anim-flash{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.25;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+@keyframes message-anim{
+  from{
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
