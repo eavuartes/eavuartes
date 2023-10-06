@@ -1123,7 +1123,7 @@ aside.live {
 
 .container {
   
-  background: rgba(161,99,226,255);
+
   max-width: 1240px;
 
 
@@ -1297,7 +1297,7 @@ aside.live {
 }
 .video-time {
   position: absolute;
-  background: rgba(21, 13, 13, 0.44);
+ 
   color: rgba(255, 255, 255, 0.85);
   padding: 3px 8px;
   font-size: 12px;
@@ -1491,11 +1491,11 @@ button.vjs-play-control.vjs-control.vjs-button {
 */
 .autogrid {
   margin-top: 30px;
-  --auto-grid-min-size: 16rem;
+  --auto-grid-min-size: 17rem;
   
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-  grid-gap: 1rem;
+  grid-gap: 0.2rem;
 }
 .cardd{
   height: 15rem;
@@ -1547,30 +1547,49 @@ height: 25%;
 
 }
 .crd11{
-width: 75%;
+width: 100%;
 height: 100%;
 background-color: none;
 display: flex;
 flex-direction:row ;
+justify-content: center;
+
+
 }
 .crdsub{
-  width: 25%;
-  height: 100%;
-  background-color: none;
+  width: 0%;
+  height: 0%;
+
 }
 
 
 .crdauthor{
-  width: 30%;
+  width: 0%;
   height: 100%;
   background-color: none;
 }
 .crdname{
-  background-color: none;
-  width: 70%;
+  
+  width: 100%;
+  display: flex;
+  flex-direction: ro;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+
 
 
   
+}
+
+.crddocente{
+width:100%;
+height:100%;
+display: flex;
+text-align: center;
+
+justify-content: center;
+align-items: center;
 }
 
 
@@ -1580,14 +1599,21 @@ flex-direction:row ;
 .crdbody{
   background-color: none;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 align-items: center;
 justify-content: center;
 width: 100%;
 height: 55%;
 
-}
 
+}
+.crdtitular{
+  justify-content:center;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: center;
+}
 
 .crdfooter{
   width: 100%;
@@ -1612,6 +1638,7 @@ height: 100%;
 display: flex;
 padding-left: 20px;
 align-items: center;
+font-size: 12px;
 
 }
 .crdbtn{
@@ -1623,7 +1650,9 @@ display: flex;
 padding-left: 10px;
 }
 
-
+.crdbtntext{
+  font-size: 14px;
+}
 
 
 .heading-xl {
@@ -1702,7 +1731,7 @@ p {
 
 
 .cardd {
-  background-color: rgba(176,99,225,0.9);
+
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   height: 100%;
